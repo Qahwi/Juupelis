@@ -1,7 +1,7 @@
 <div class="top-bar">
     <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text">Gig</li>
+            <li class="menu-text"><a href='/home'>Gig</a></li>
             <li>
                 <a href="#">One</a>
                 <ul class="menu vertical">
@@ -18,12 +18,18 @@
         <ul class="menu">
             <li><input type="search" placeholder="Search"></li>
             <li><button type="button" class="button">Search</button></li>
+            {% if user.is_authenticated %}
             <li>
-                <a href="login/">Login</a>
+                <a href="/accounts/logout/"> Logout </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/accounts/login/">Login</a>
             </li>
             <li>
-                <a href="signup/">Signup</a>
+                <a href="/signup">Signup</a>
             </li>
+            {% endif %}
         </ul>
     </div>
 </div>

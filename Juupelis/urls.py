@@ -27,5 +27,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', RedirectView.as_view(url='/home', permanent=False)),
-    url(r'^home/', homeView),
+    url(r'^home/', HomeView),
+    url(r'^login/', LoginView),
+    url(r'^accounts/', include('allauth.urls')),
 ]
