@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %} Gig palvelu {% endblock %}</title>
+
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/foundation.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}" />
+    <script src={% static "/js/vendor/jquery.js" %}></script>
+    <script src={% static "/js/vendor/foundation.js" %}></script>
+    <script src={% static "/js/vendor/what-input.js" %}></script>
+    <script src={% static "/js/app.js" %}></script>
+</head>
+
+<body style="padding-top: 0px;">
+    <div id="wrapper">
+        <div id="navbar">
+            {% block navbar %} {% include "navbar.html" %} {% endblock %}
+        </div>
+        <div class="container" id="content">
+            {% block content %} {% include "home.html" %} {% endblock %}
+        </div>
+        <div id="footer">
+            {% block footer %} {% include "footer.html" %} {% endblock %}
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(document).foundation();
+        })
+    </script>
+</body>
+
+</html>

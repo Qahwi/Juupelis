@@ -53,11 +53,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Juupelis.urls'
 
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(PROJECT_ROOT, 'templates').replace('\\','/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
